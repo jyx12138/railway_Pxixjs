@@ -14,9 +14,6 @@
     <script src="./js/lib/TimelineMax.min.js" charset="utf-8"></script>
     <script src="./js/lib/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="./js/lib/swiper-bundle.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
-    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
-    <script type="text/jscript" src="https://www.kunming.cn/zhuanti/statics/js/wxShare.js"></script>
 </head>
 
 <body class="row">
@@ -141,36 +138,6 @@
     }, false);
 </script>
 
-<script>
-    let option={
-        title:'来体验！坐着火车去老挝 边赏风光边点赞',
-        link:'',
-        img:'https://m.kunming.cn/zhuanti/xwzt/2021/ydylzltl/images/share.jpg',
-        desc:'共建"一带一路" 赓续中老友谊,小港带你云看中老铁路'
-    }
-    initwxConfig(option)
-    function init(){
-        $.getJSON(
-            "https://vote.kunming.cn/survey_interf_getnum_json.php?sid=541&aid="+$('.like-num').attr("rel")+"&jsoncallback=?",
-            function(data){
-                console.log(data)
-                $('.like-num').html(data.ansnum)
-                $('.like-num').attr('currnum',data.ansnum)
-            });
-    }
-    function visit() {
-        $.getJSON(
-            "https://vote.kunming.cn/survey_interfdo.php?t=3&sid=541&aid="+$('.like-num').attr("rel")+"&currnum="+$('.like-num').attr("currnum")+"&jsoncallback=?",
-            function(data){
-                console.log(data);
-                init()
-            });
-    }
-    init()
-    $('.like-num').on('click', function (){
-        visit()
-    })
-</script>
 </body>
 <!--<script src="https://unpkg.com/vconsole/dist/vconsole.min.js"></script>-->
 <!--<script>-->
