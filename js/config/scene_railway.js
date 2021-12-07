@@ -1,0 +1,16 @@
+export default [
+    { name: "scene0", x: 0, y: 0, width: 1466, height: 750 },
+    { name: "scene1", x: 1466, y: 0, width: 2351, height: 750 },
+    { name: "scene2", x: 3817, y: 0, width: 1120, height: 750 },
+    { name: "scene3", x: 4937, y: 0, width: 1152, height: 750 },
+    { name: "scene4", x: 6085, y: 0, width: 1757, height: 750 },
+    { name: "scene5", x: 7840, y: 0, width: 1156, height: 750 },
+    { name: "scene6", x: 8989, y: 0, width: 1178, height: 750 },
+    { name: "scene7", x: 10164, y: 0, width: 1080, height: 750 },
+    { name: "scene8", x: 11228, y: 0, width: 1160, height: 750 },
+    { name: "scene9", x: 12377, y: 0, width: 1678, height: 750 },
+    { name: "scene10", x: 14046, y: 0, width: 1084, height: 750 },
+    { name: "scene11", x: 15130, y: 0, width: 2525, height: 750 },
+    { name: "scene12", x: 17654, y: 0, width: 1390, height: 750 },
+    { name: "scene13", x: 19043, y: 0, width: 1170, height: 750 },
+];

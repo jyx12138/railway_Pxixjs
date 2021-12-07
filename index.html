@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <script src="./js/lib//Alloytouch.js" charset="utf-8"></script>
+    <script src="./js/lib/Pixi.min.js" charset="utf-8"></script>
+<!--    <script src="./js/lib/spriteUtilities.js" charset="utf-8"></script>-->
+    <script src="./js/lib/TweenMax.min.js" charset="utf-8"></script>
+    <script src="./js/lib/TimelineMax.min.js" charset="utf-8"></script>
+    <script src="./js/lib/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="./js/lib/swiper-bundle.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/jscript" src="https://www.kunming.cn/zhuanti/statics/js/wxShare.js"></script>
+</head>
+
+<body class="row">
+<div id="canvas"></div>
+<div id="loading" class="col">
+<!--    <div class="loading-main">-->
+<!--        <img src="./imgs/gift.png" class="gift" />-->
+<!--    </div>-->
+    <div id="percent">
+        0%
+    </div>
+</div>
+<div class="lan-change"></div>
+<div class="like-num" rel="29440" currnum="0">35435</div>
+<!--稿件页-->
+<div class="article-list">
+    <div class="side-content">
+        <div class="article-content">
+            <div class="content-info">
+                <div class="title title-ch">复活节可适当放宽决定是否可接受</div>
+                <div class="title title-lo"></div>
+                <div class="date">20308 </div>
+                <div class="detail detail-ch">
+                    ；拉萨解放了safsa
+                    爱丽丝开发了卡萨活佛
+                    阿拉山口发货了
+
+                    案说法了解了asf；laljf
+
+
+                    爱上了反馈回来撒法
+                    ；拉萨解放了safsa
+                    爱丽丝开发了卡萨活佛
+                    阿拉山口发货了
+
+                    案说法了解了asf；laljf
+
+
+                    爱上了反馈回来撒法
+                    ；拉萨解放了safsa
+                    爱丽丝开发了卡萨活佛
+                    阿拉山口发货了
+
+                    案说法了解了asf；laljf
+
+
+                    爱上了反馈回来撒法
+                    ；拉萨解放了safsa
+                    爱丽丝开发了卡萨活佛
+                    阿拉山口发货了
+
+                    案说法了解了asf；laljf
+
+
+                    爱上了反馈回来撒法
+                </div>
+                <div class="detail detail-lo"></div>
+            </div>
+        </div>
+        <div class="close-btn"></div>
+    </div>
+</div>
+<div class="article-list">
+    <div class="side-content">
+        <div class="article-content"></div>
+        <div class="close-btn"></div>
+    </div>
+</div>
+
+<!--顶部导航-->
+<div class="swiper-list-wrapper">
+    <div class="swiper-container">
+        <div class="nav-list swiper-wrapper"></div>
+    </div>
+</div>
+
+
+
+<a href="#" id='rule-link' class="shu">活动规则</a>
+<div class="col" id="form-panel">
+    <form class="col heng" id="form" method="post" action='/submit' onsubmit="return submitForm();">
+        <input id="name" class="input" required type="text" name="name" value="" placeholder="请输入您的姓名">
+        <input id="phone" class="input" required maxlength="11" minlength="11" type="tel" name="phone" value=""
+               placeholder="请输入您的手机号码">
+        <button class="btn" type="submit" name="button">提交信息 参与抽奖</button>
+        <div class="success">提交成功</div>
+    </form>
+</div>
+
+<div class="audio-icon audio-icon-rotate"></div>
+<div class="audio">
+    <audio preload='auto' src="./audio/bg.mp3" id="bg" loop="loop"></audio>
+</div>
+
+<script type="text/javascript">
+    (function (doc, win) {
+        const docEl = doc.documentElement;
+        win.__clientW = docEl.clientWidth;
+        win.__clientH = docEl.clientHeight;
+
+        function setRootFontSize() {
+            const fontSize = (docEl.clientWidth * 150 / 1334).toFixed(3);
+            docEl.style.fontSize = fontSize + 'px';
+        }
+        doc.addEventListener('DOMContentLoaded', setRootFontSize, false);
+
+
+        if (win.__clientH > win.__clientW) {
+            doc.getElementById("form").className = "col rotate";
+            doc.getElementById("rule-link").className = "rotate";
+        }
+        // 横竖屏切换，重新加载
+        // window.location.reload()
+    })(document, window);
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () {
+        if (window.orientation === 180 || window.orientation === 0) {
+            location.reload();
+        }
+        if (window.orientation === 90 || window.orientation === -90) {
+            location.reload();
+        }
+    }, false);
+</script>
+
+<script>
+    let option={
+        title:'来体验！坐着火车去老挝 边赏风光边点赞',
+        link:'',
+        img:'https://m.kunming.cn/zhuanti/xwzt/2021/ydylzltl/images/share.jpg',
+        desc:'共建"一带一路" 赓续中老友谊,小港带你云看中老铁路'
+    }
+    initwxConfig(option)
+    function init(){
+        $.getJSON(
+            "https://vote.kunming.cn/survey_interf_getnum_json.php?sid=541&aid="+$('.like-num').attr("rel")+"&jsoncallback=?",
+            function(data){
+                console.log(data)
+                $('.like-num').html(data.ansnum)
+                $('.like-num').attr('currnum',data.ansnum)
+            });
+    }
+    function visit() {
+        $.getJSON(
+            "https://vote.kunming.cn/survey_interfdo.php?t=3&sid=541&aid="+$('.like-num').attr("rel")+"&currnum="+$('.like-num').attr("currnum")+"&jsoncallback=?",
+            function(data){
+                console.log(data);
+                init()
+            });
+    }
+    init()
+    $('.like-num').on('click', function (){
+        visit()
+    })
+</script>
+</body>
+<!--<script src="https://unpkg.com/vconsole/dist/vconsole.min.js"></script>-->
+<!--<script>-->
+<!--    // VConsole will be exported to `window.VConsole` by default.-->
+<!--    var vConsole = new window.VConsole();-->
+<!--</script>-->
+<script charset="utf-8" type="module">
+    import MainRail from './js/railway-index.js'
+</script>
+
+</html>
